@@ -1,3 +1,5 @@
+# NOT FOR PRODUCTION
+
 import os
 from flask import Flask, session
 from flask import render_template, send_from_directory
