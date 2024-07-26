@@ -10,9 +10,18 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route("/aboutme")
+def about():
+    return render_template('aboutme.html')
+
+
 @app.route("/projects")
 def projects():
     return render_template('projects.html')
+
+@app.route("/projects/kernel")
+def os():
+    return render_template('kerneldev.html')
 
 @app.route("/usefulinfo")
 def usefulinfo():
@@ -22,6 +31,10 @@ def usefulinfo():
 @app.route("/contact")
 def contact():
     return render_template('contact.html')
+
+@app.route("/workout")
+def workout():
+    return render_template('workout.html')
 
 @app.route('/favicon.ico')
 def favicon():

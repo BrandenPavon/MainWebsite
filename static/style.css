@@ -16,7 +16,7 @@ a:hover {
 }
 
 ul {
-    list-style-type: 'â€”';
+    #list-style-type: '';
 }
 
 li {

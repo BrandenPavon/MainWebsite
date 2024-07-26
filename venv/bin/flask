@@ -1,4 +1,4 @@
-#!/home/ch1lly/code/python/MainWebsite/venv/bin/python3
+#!/home/watchmaker/mygit/MainWebsite/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
