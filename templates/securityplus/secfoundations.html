@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang=en>
+	<head>
+	  <title>BP</title>
+	  <link rel='stylesheet' type='text/css' href='/static/style.css'>
+	  <meta charset='utf-8'>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<h1>bpsite.xyz: Branden Pavon</h1>
+
+		<hr />
+
+		<ul class='links'>
+		  <li><a href='/'>Home</a></li>
+		  <li><a href='https://www.linkedin.com/in/branden-pavon-21a4702b3/'>Linkedin</a></li>
+		  <li><a href='/tutorials'>Tutorials</a></li>
+		  <li><a href='/contact'>Contact</a></li>
+		</ul>
+
+		<hr />
+        <p>
+            Do this guide in the order that you read it
+        </p>
+        <p>
+            Use a secure password for your user and for root. 
+            A password should have all of these
+            <ul>
+                <li>More than 12 characters</li> 
+                <li>At least one uppercase </li>
+                <li>At least one lowercase </li>
+                <li>At least one special character</li>
+                <li>Not tied to your Personal Identifiable Information(PII)</li>
+                <li>Not have characters replaced by well known alternatives( 3 instead of E, 0 instead of O)</li>
+            </ul>
+        </p>
+        <p>
+            Lock ssh for root and setup ssh for an unprivileged user
+        </p>
+        <p>
+            In /etc/ssh/sshd_config, uncomment "PermitRootLogin" if it is commented, and set it to "no".
+        </p>
+        <img src="/static/tutorials-opsec-permitrootlogin.png">
+        <p>
+            nmap -p-
+            fail2ban 
+            use an ssh key
+        </p>
+		<hr />
+		<ul class='links'>
+		  <li><a href='/contact'>Contact</a></li>
+		</ul>
+	</body>
+</html>
