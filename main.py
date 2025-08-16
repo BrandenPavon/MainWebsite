@@ -10,27 +10,6 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route("/tutorials")
-def tutorials():
-    return render_template('tutorials.html')
-
-@app.route("/tutorials/opsec")
-def tutorials_opsec():
-    return render_template('tutorials-opsec.html')
-
-#@app.route("/projects")
-#def projects():
-#    return render_template('projects.html')
-
-#@app.route("/projects/kernel")
-#def os():
-#    return render_template('kerneldev.html')
-
-#@app.route("/usefulinfo")
-#def usefulinfo():
-#    return render_template('usefulinfo.html')
-
-
 @app.route("/contact")
 def contact():
     return render_template('contact.html')
@@ -40,9 +19,9 @@ def work():
     return render_template('portfolio.html')
 
 
-#@app.route("/workout")
-#def workout():
-#    return render_template('workout.html')
+@app.route("/soon")
+def workout():
+    return render_template('soon.html')
 
 @app.route('/favicon.ico')
 def favicon():
