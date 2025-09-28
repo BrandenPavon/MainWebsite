@@ -1,4 +1,4 @@
-# NOT FOR PRODUCTION
+# NOT FOR PRODUCTION, RUN run.sh
 
 import os
 from flask import Flask, session
