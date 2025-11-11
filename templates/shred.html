@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang=en>
+	<head>
+	  <title>BP</title>
+	  <link rel='stylesheet' type='text/css' href='/static/style.css'>
+	  <meta charset='utf-8'>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<h1>bpsite.xyz: Branden Pavon</h1>
+
+		<hr />
+
+		<ul class='links'>
+		  <li><a href='/'>Home</a></li>
+		  <li><a href='https://www.linkedin.com/in/branden-pavon-21a4702b3/'>Linkedin</a></li>
+          <li><a href='https://github.com/BrandenPavon'>Github</a></li>
+		  <li><a href='/portfolio'>Portfolio</a></li>
+		  <li><a href='/contact'>Contact</a></li>
+		</ul>
+
+		<hr />
+        <ul class='links'>
+          <li><p><b>Shred: Securely Delete Your Data</b></p></li>
+		</ul>
+
+        <p>
+          The only command you need is the following:
+        </p>
+        <p><b>
+          [user@computer ~]$ shred -uzv -n 5
+        </b></p>
+        <p>
+          Let's review what this does:
+        </p>
+        <p>
+          -u : Removes the file after overwriting -> shred, by default, just overwrites the file
+        </p>
+        <p>
+          -z : Overwrite with all zeros -> shred, by default, fills the file with random data
+        </p>
+        <p>
+        -v : Verbose mode -> You can remove if wanted, I like to see the process being done
+        </p>
+        <p>
+        -n 5 : Do this 5 times -> shred does it only once by default, I want to do it 5 times to make extra sure that the data is deleted
+        </p>
+
+
+        <p>
+        I highly suggest putting this command as an alias in your .bashrc file. 
+        </p>
+        <p><b>
+        alias securedel = "shred -uzv -n 5"
+        </b></p>
+        <p>
+        This is so you do not have to memorize the command everytime. Very useful.
+        </p>
+
+
+      <hr />
+
+
+      <ul class='links'>
+        <li><a href='/contact'>Contact</a></li>
+      </ul>
+	</body>
+</html>

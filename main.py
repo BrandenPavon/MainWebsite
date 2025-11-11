@@ -18,6 +18,9 @@ def contact():
 def work():
     return render_template('portfolio.html')
 
+@app.route("/shred")
+def shred():
+    return render_template('shred.html')
 
 @app.route("/soon")
 def workout():
