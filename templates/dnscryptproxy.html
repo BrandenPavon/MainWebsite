@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang=en>
+	<head>
+	  <title>BP</title>
+	  <link rel='stylesheet' type='text/css' href='/static/style.css'>
+	  <meta charset='utf-8'>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<h1>bpsite.xyz: Branden Pavon</h1>
+
+		<hr />
+
+		<ul class='links'>
+		  <li><a href='/'>Home</a></li>
+		  <li><a href='https://www.linkedin.com/in/branden-pavon-21a4702b3/'>Linkedin</a></li>
+          <li><a href='https://github.com/BrandenPavon'>Github</a></li>
+		  <li><a href='/projects'>Projects</a></li>
+		</ul>
+
+		<hr />
+        <ul class='links'>
+          <li><p><b>DNSCRYPT: Encrypt your DNS queries</b></p></li>
+		</ul>
+
+
+
+
+        <p>
+          Question: What is dnscrypt-proxy?
+        </p>
+
+        <p>
+          dnscrypt-proxy is a local DNS resolver that encrypts DNS traffic using DNSCrypt or DNS-over-HTTPS (DoH). If you do not know already, DNS queries are unencrypted by default so snoopers can see what websites or services you are using. dnscrypt-proxy prevents this by encrypting your DNS queries before sending them out to a public resolver.
+        </p>
+
+        <p><b>Debian / Ubuntu</b></p>
+
+        <code>
+        [user@computer ~]$ sudo apt update
+        </code>
+
+        <p></p>
+
+        <code>
+        [user@computer ~]$ sudo apt upgrade
+        </code>
+
+        <p></p>
+
+        <code>
+        [user@computer ~]$ sudo apt install dnscrypt-proxy
+        </code>
+
+        <p><b>Arch Linux</b></p>
+
+        <code>
+        [user@computer ~]$ sudo pacman -Sy dnscrypt-proxy
+        </code>
+
+        <p><b>Void Linux</b></p>
+
+        <code>
+        [user@computer ~]$ sudo xbps-install -S dnscrypt-proxy
+        </code>
+
+        <p>
+        Lets edit the configuration file
+        </p>
+
+        <code>
+        [user@computer ~]$ vim /etc/dnscrypt-proxy/dnscrypt-proxy.toml
+        </code>
+
+        <p>
+        Inside this file you can configure which DNS servers dnscrypt-proxy will use.
+        Look for the following line:
+        </p>
+
+        <code>
+        server_names = ['quad9', 'openinternet']
+        </code>
+
+        <p>
+        You can change this list depending on which encrypted DNS providers you prefer.
+        Common providers include Cloudflare(not recommened), Quad9, Mullvad, quad101, controld, etc.
+        </p>
+        <p>Use <a href='https://dnscrypt.info/public-servers'> https://dnscrypt.info/public-servers</a> to find some servers</p>
+
+        <p>
+        You may also want to enable DNSSEC validation for improved security.
+        Find the following line and ensure it is set to true:
+        </p>
+
+        <code>
+        require_dnssec = true
+        </code>
+
+        <p>
+        Once the configuration is finished, save the file and start the dnscrypt-proxy service.
+        </p>
+
+        <p><b>Start and enable the service(systemd, Debian/Ubuntu and Arch)</b></p>
+        <p> This is for Systemd only. Skip this section if you are using another init system.
+        <code>
+        [user@computer ~]$ sudo systemctl enable dnscrypt-proxy
+        </code>
+
+        <p></p>
+
+        <code>
+        [user@computer ~]$ sudo systemctl start dnscrypt-proxy
+        </code>
+
+        <p>
+        Now verify the service is running:
+        </p>
+
+        <code>
+        [user@computer ~]$ systemctl status dnscrypt-proxy
+        </code>
+        <p><b>Enable and start service (Runit, Void Linux)</b></p>
+        <p> This is for Runit only. Skip this section if you are using another init system.
+        <code>
+        [user@computer ~]$ sudo ln -s /etc/sv/dnscrypt-proxy /var/service
+        </code>
+
+        <p></p>
+
+        <code>
+        [user@computer ~]$ sudo sv up dnscrypt-proxy
+        </code>
+
+        <p>
+        You can check the service status with:
+        </p>
+
+        <code>
+        [user@computer ~]$ sv status dnscrypt-proxy
+        </code>
+
+        <p></p>
+        <hr />
+        <p></p>
+        <p><b>Time to use the service! Almost done!</b></p>
+        <p>
+        Next, configure your system to use the local DNS resolver.
+        Edit your resolver configuration file:
+        </p>
+
+        <code>
+        [user@computer ~]$ sudo vim /etc/resolv.conf
+        </code>
+
+        <p>
+        Add the following line so your system uses dnscrypt-proxy locally:
+        </p>
+
+        <code>
+        nameserver 127.0.0.1
+        </code>
+
+        <p>
+        Finally, test that DNS resolution works properly.
+        </p>
+
+        <code>
+        [user@computer ~]$ dig example.com
+        </code>
+
+        <p>
+        If the command returns an IP address, dnscrypt-proxy is working and your DNS queries are now encrypted.
+        </p>
+
+
+
+
+
+      <hr />
+        <ul class='links'>
+          <li><p style="text-align:center; width:100%;"><b>EMAIL: bp [at] bpsite (dot) xyz</b></p></li>
+          <li><p style="text-align:center; width:100%;"><b>GITHUB: github.com/BrandenPavon</b></p></li>
+		</ul>
+
+	</body>
+</html>

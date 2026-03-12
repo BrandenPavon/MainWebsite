@@ -10,18 +10,16 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route("/contact")
-def contact():
-    return render_template('contact.html')
-
-@app.route("/portfolio")
+@app.route("/projects")
 def work():
-    return render_template('portfolio.html')
+    return render_template('projects.html')
 
 @app.route("/shred")
 def shred():
     return render_template('shred.html')
-
+@app.route("/dnscryptproxy")
+def d():
+    return render_template('dnscryptproxy.html')
 @app.route("/soon")
 def workout():
     return render_template('soon.html')
